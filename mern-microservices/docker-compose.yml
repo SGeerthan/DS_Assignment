@@ -20,11 +20,12 @@ services:
     depends_on:
       - todo-service
 
-  frontend:
-    build: ./frontend
+  auth-service:
+    build: ./auth-service
     ports:
-      - '3000:3000'
+      - "5001:5001"
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      - MONGO_URI=mongodb://mongo:27017/auth-db
+      - JWT_SECRET=supersecretkey
     depends_on:
-      - api-gateway
+      - mongo

@@ -27,6 +27,8 @@ spec:
       containers:
         - name: api-gateway
           image: sangs29/api-gateway
+          imagePullPolicy: Always
+
           ports:
             - containerPort: 8080
           env:

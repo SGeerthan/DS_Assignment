@@ -10,6 +10,15 @@ app.use('/api/todos', createProxyMiddleware({
   changeOrigin: true,
 }));
 
+app.use('/api/auth', createProxyMiddleware({
+  target: 'http://auth-service:5001',
+  changeOrigin: true,
+  onError: (err, req, res) => {
+    console.error('Auth Service Error:', err.message);
+    res.status(503).json({ error: 'Auth service is unavailable' });
+  }
+}));
+
 app.get('/work', (req, res) => res.send('Working'));    
 
 app.listen(8080, () => {

@@ -27,7 +27,7 @@ app.post('/todos', async (req, res) => {
 });
 
 app.get('/work', async (req, res) => {
-  res.send('Working');
+  res.send('Working todo service');
 })
 
 app.listen(5000, () => {
