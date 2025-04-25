@@ -9,7 +9,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/auth", require("./routes/userRoute"));
 
 app.get('/health', (req, res) => {
     res.status(200).send('Auth Service is healthy');
