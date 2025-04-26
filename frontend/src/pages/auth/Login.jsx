@@ -24,7 +24,7 @@ export default function Login() {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axios.post("http://localhost:5559/users/login", {
+      const { data } = await axios.post("http://localhost:5000/auth/register", {
         email,
         password
       });
