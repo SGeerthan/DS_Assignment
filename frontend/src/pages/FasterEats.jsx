@@ -1,56 +1,56 @@
 // pages/FasterEats.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 /* ------------------------------------------------------------------ */
 /*  dummy data – replace with API data later                          */
 /* ------------------------------------------------------------------ */
 const categories = [
-  { name: 'Biryani',  img: '/public/briyani.png' },
-  { name: 'Pizza',    img: '/public/pizza.png' },
-  { name: 'Cake',     img: '/public/cake.png' },
-  { name: 'Idli',     img: '/public/idli.png' },
-  { name: 'Chinese',  img: '/public/noodles.png' },
-  { name: 'Dosa',     img: '/public/dosa.png' },
-  { name: 'Pasta',    img: '/public/pasta (2).png' },
-  { name: 'Momo',     img: '/public/momo.png' },
-  { name: 'Rolls',    img: '/public/rolls.png' },
-  { name: 'Kebab',    img: '/public/kebab.png' }
+  { name: "Biryani", img: "/briyani.png" },
+  { name: "Pizza", img: "/pizza.png" },
+  { name: "Cake", img: "/cake.png" },
+  { name: "Idli", img: "/idli.png" },
+  { name: "Chinese", img: "/noodles.png" },
+  { name: "Dosa", img: "/dosa.png" },
+  { name: "Pasta", img: "/pasta (2).png" },
+  { name: "Momo", img: "/momo.png" },
+  { name: "Rolls", img: "/rolls.png" },
+  { name: "Kebab", img: "/kebab.png" },
 ];
 
 const restaurants = [
   {
-    name: 'Lord of the Drinks',
-    cuisines: 'Continental • North Indian',
-    price: 'Rs 2500 for two',
-    distance: '4.7 km',
-    img: '/public/res1.jpeg',
-    discount: '40 % OFF'
+    name: "Lord of the Drinks",
+    cuisines: "Continental • North Indian",
+    price: "Rs 2500 for two",
+    distance: "4.7 km",
+    img: "/res1.jpeg",
+    discount: "40 % OFF",
   },
   {
-    name: 'Enoki',
-    cuisines: 'Chinese • Sushi',
-    price: 'Rs 1200 for two',
-    distance: '1.4 km',
-    img: '/public/res2.jpg',
-    discount: '20 % OFF'
+    name: "Enoki",
+    cuisines: "Chinese • Sushi",
+    price: "Rs 1200 for two",
+    distance: "1.4 km",
+    img: "/res2.jpg",
+    discount: "20 % OFF",
   },
   {
-    name: 'Message In A Bottle',
-    cuisines: 'Chinese • North Indian',
-    price: 'Rs 1600 for two',
-    distance: '1.4 km',
-    img: '/public/res4.jpg',
-    discount: '30 % OFF'
+    name: "Message In A Bottle",
+    cuisines: "Chinese • North Indian",
+    price: "Rs 1600 for two",
+    distance: "1.4 km",
+    img: "/res4.jpg",
+    discount: "30 % OFF",
   },
   {
-    name: 'Mamagoto',
-    cuisines: 'Chinese • Asian',
-    price: 'Rs 1800 for two',
-    distance: '2.2 km',
-    img: '/public/res3.jpeg',
-    discount: '25 % OFF'
-  }
+    name: "Mamagoto",
+    cuisines: "Chinese • Asian",
+    price: "Rs 1800 for two",
+    distance: "2.2 km",
+    img: "/res3.jpeg",
+    discount: "25 % OFF",
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -62,7 +62,11 @@ export default function FasterEats() {
       {/* ---------------- Header ---------------- */}
       <header className="flex items-center justify-between px-6 py-4 bg-white shadow">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/public/FasterEatsLogo.png" alt="logo" className="w-8 h-8" />
+          <img
+            src="/FasterEatsLogo.png"
+            alt="logo"
+            className="w-8 h-8"
+          />
           <span className="text-xl font-semibold">FasterEats</span>
         </Link>
         <div className="flex gap-4">
@@ -99,7 +103,7 @@ export default function FasterEats() {
           <h1 className="mb-4 text-4xl font-bold md:text-5xl leading-tight">
             Order food & groceries.
             <br />
-            Discover best restaurants.{' '}
+            Discover best restaurants.{" "}
             <span className="text-black/70">FasterEats it!</span>
           </h1>
 
@@ -109,7 +113,7 @@ export default function FasterEats() {
               className="flex-1 md:max-w-xs px-4 py-3 rounded-lg text-gray-700"
               defaultValue="Colombo"
             >
-              {['Colombo', 'Kandy', 'Galle', 'Jaffna', 'Matara'].map((c) => (
+              {["Colombo", "Kandy", "Galle", "Jaffna", "Matara"].map((c) => (
                 <option key={c}>{c}</option>
               ))}
             </select>
@@ -127,7 +131,11 @@ export default function FasterEats() {
         <div className="flex overflow-x-auto gap-10 pb-4">
           {categories.map((c) => (
             <div key={c.name} className="flex-shrink-0 text-center w-28">
-              <img src={c.img} alt={c.name} className="w-28 h-28 object-cover rounded-full" />
+              <img
+                src={c.img}
+                alt={c.name}
+                className="w-28 h-28 object-cover rounded-full"
+              />
               <p className="mt-2 font-medium">{c.name}</p>
             </div>
           ))}
@@ -143,7 +151,7 @@ export default function FasterEats() {
             className="relative h-64 rounded-2xl overflow-hidden group"
           >
             <img
-              src="/public/kitchen.jpg"
+              src="/kitchen.jpg"
               alt="Add your restaurant"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
@@ -164,7 +172,7 @@ export default function FasterEats() {
             className="relative h-64 rounded-2xl overflow-hidden group"
           >
             <img
-              src="/public/delivery.jpeg"
+              src="/delivery.jpeg"
               alt="Sign up to deliver"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
@@ -218,7 +226,11 @@ export default function FasterEats() {
         <div className="max-w-screen-xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/public/FasterEatsLogo.png" alt="logo" className="w-8 h-8" />
+              <img
+                src="/public/FasterEatsLogo.png"
+                alt="logo"
+                className="w-8 h-8"
+              />
               <span className="text-lg font-semibold">FasterEats</span>
             </div>
             <p className="text-gray-500">© 2025 FasterEats (Pvt) Ltd</p>
@@ -244,7 +256,14 @@ export default function FasterEats() {
           <div>
             <h4 className="font-semibold mb-3">Available in:</h4>
             <ul className="space-y-2 text-gray-600">
-              {['Colombo', 'Kandy', 'Galle', 'Matara', 'Jaffna', 'Kurunegala'].map((c) => (
+              {[
+                "Colombo",
+                "Kandy",
+                "Galle",
+                "Matara",
+                "Jaffna",
+                "Kurunegala",
+              ].map((c) => (
                 <li key={c}>{c}</li>
               ))}
             </ul>
